@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATH QUEST | E-Modul Teorema Pythagoras</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#07111f">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+<div id="app">
+
+  <!-- ================= COVER / BERANDA ================= -->
+  <section id="home" class="page active">
+    <div class="cover">
+      <img src="assets/cover.png" class="cover-art" alt="Cover MATH QUEST">
+      <div class="cover-shade"></div>
+      <div class="cover-ui">
+        <div class="mini-title">📐 E-MODUL INTERAKTIF • SMP KELAS VIII</div>
+        <h1>MATH QUEST</h1>
+        <h2>Misi Rahasia Teorema Pythagoras</h2>
+        <p>Belajar → Eksplorasi → Latihan → Kuis → Tantangan</p>
+        <button class="btn primary big" onclick="showPage('module')">🚀 MULAI PETUALANGAN</button>
+
+        <div class="home-menu">
+          <button onclick="showPage('module')">📖<b>E-MODUL</b><small>Materi lengkap</small></button>
+          <button onclick="showPage('practice')">📝<b>LATIHAN</b><small>Uji pemahaman</small></button>
+          <button onclick="startQuiz()">🎮<b>KUIS</b><small>5 PG + 5 Esai</small></button>
+          <button onclick="showPage('progress')">🏆<b>PROGRESS</b><small>Lihat hasil</small></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= E-MODUL ================= -->
+  <section id="module" class="page">
+    <header class="topbar">
+      <button class="top-btn" onclick="showPage('home')">← Beranda</button>
+      <strong>📖 MATH QUEST — E-MODUL</strong>
+      <button class="top-btn" onclick="startQuiz()">Kuis →</button>
+    </header>
+
+    <main class="content">
+      <div class="hero module-hero">
+        <span class="tag">📚 E-BOOK INTERAKTIF • MATEMATIKA KELAS VIII</span>
+        <h1>Petualangan Teorema Pythagoras</h1>
+        <p>Jelajahi konsep, temukan pola, pahami rumus, dan gunakan Pythagoras untuk memecahkan masalah nyata.</p>
+      </div>
+
+      <div class="chapter-tabs">
+        <button onclick="openChapter(1)">01 Tujuan</button>
+        <button onclick="openChapter(2)">02 Pemantik</button>
+        <button onclick="openChapter(3)">03 Peta Konsep</button>
+        <button onclick="openChapter(4)">04 Temukan Konsep</button>
+        <button onclick="openChapter(5)">05 Segitiga Siku-Siku</button>
+        <button onclick="openChapter(6)">06 Rumus & Contoh</button>
+        <button onclick="openChapter(7)">07 Penerapan</button>
+        <button onclick="openChapter(8)">08 Kartesius</button>
+        <button onclick="openChapter(9)">09 Latihan</button>
+        <button onclick="openChapter(10)">10 Ringkasan</button>
+        <button onclick="openChapter(11)">11 Penutup</button>
+      </div>
+
+      <article class="lesson" id="chapter1">
+        <span class="tag">BAB 1 • TUJUAN PEMBELAJARAN</span>
+        <h2>🎯 Setelah belajar, kamu dapat...</h2>
+        <p>Setelah menyelesaikan E-Book ini, peserta didik diharapkan tidak hanya dapat menghafal rumus, tetapi juga memahami alasan penggunaan Teorema Pythagoras dan menggunakannya secara tepat.</p>
+        <div class="goal-grid">
+          <div>🔎 <b>Mengenali</b><small>mengidentifikasi segitiga siku-siku, sudut 90°, sisi siku-siku, dan hipotenusa.</small></div>
+          <div>📐 <b>Menentukan</b><small>menentukan sisi yang diketahui dan sisi yang belum diketahui.</small></div>
+          <div>🧮 <b>Menghitung</b><small>menggunakan rumus Pythagoras untuk mencari panjang sisi segitiga.</small></div>
+          <div>💡 <b>Menjelaskan</b><small>menjelaskan hubungan kuadrat ketiga sisi pada segitiga siku-siku.</small></div>
+          <div>🌍 <b>Menerapkan</b><small>menyelesaikan persoalan tangga, diagonal, jarak, tinggi, dan situasi nyata lainnya.</small></div>
+          <div>🗺️ <b>Menghubungkan</b><small>menghubungkan Pythagoras dengan jarak dua titik pada bidang Kartesius.</small></div>
+        </div>
+        <div class="info"><b>🌟 Target akhir</b><p>Kamu mampu membaca masalah, membuat model segitiga siku-siku, memilih rumus yang sesuai, menghitung dengan teliti, serta menuliskan jawaban beserta satuannya.</p></div>
+        <h3>📌 Prasyarat</h3>
+        <p>Sebelum mempelajari materi ini, sebaiknya kamu sudah mengenal operasi bilangan, kuadrat bilangan, akar kuadrat sederhana, panjang dan satuan, serta konsep dasar koordinat.</p>
+      </article>
+
+      <article class="lesson hidden" id="chapter2">
+        <span class="tag">BAB 2 • PERTANYAAN PEMANTIK</span>
+        <h2>💭 Pernahkah kamu bertanya...</h2>
+        <div class="prompt-card">
+          <p>🏠 Bagaimana tukang menentukan panjang tangga agar mencapai ketinggian tertentu?</p>
+          <p>📺 Jika panjang dan lebar layar diketahui, bagaimana mencari diagonalnya?</p>
+          <p>🌳 Bagaimana mencari jarak lurus dari satu sudut taman ke sudut lainnya?</p>
+          <p>🚁 Bagaimana menghitung jarak drone dari suatu titik di tanah jika posisi mendatar dan tingginya diketahui?</p>
+          <p>🧭 Mengapa dua arah yang saling tegak lurus dapat membantu menemukan jarak lurus?</p>
+          <p>📍 Bagaimana menghitung jarak antara dua titik pada peta koordinat?</p>
+        </div>
+        <div class="example"><b>🤔 Tantangan awal:</b> sebuah lapangan berbentuk persegi panjang memiliki panjang 12 m dan lebar 5 m. Tanpa mengukur diagonal secara langsung, bagaimana cara mengetahui panjang diagonalnya?</div>
+        <p>Catat perkiraanmu. Setelah mempelajari bab berikutnya, kembali dan lihat apakah cara berpikirmu sudah sesuai.</p>
+      </article>
+
+      <article class="lesson hidden" id="chapter3">
+        <span class="tag">BAB 3 • PETA KONSEP</span>
+        <h2>🗺️ Peta Konsep Teorema Pythagoras</h2>
+        <div class="concept-map">
+          <div class="concept-main">📐 TEOREMA PYTHAGORAS</div>
+          <div class="concept-row">
+            <div><b>Segitiga Siku-Siku</b><span>satu sudut = 90°</span></div>
+            <div><b>Unsur Sisi</b><span>a, b = siku-siku • c = hipotenusa</span></div>
+            <div><b>Hubungan Sisi</b><span>a² + b² = c²</span></div>
+          </div>
+          <div class="concept-row">
+            <div><b>Mencari c</b><span>√(a²+b²)</span></div>
+            <div><b>Mencari a/b</b><span>√(c²−sisi²)</span></div>
+            <div><b>Penerapan</b><span>diagonal • jarak • tinggi</span></div>
+          </div>
+          <div class="concept-row">
+            <div><b>Bidang Kartesius</b><span>selisih x dan y</span></div>
+            <div><b>Pemeriksaan</b><span>cek kuadrat dan satuan</span></div>
+            <div><b>Penyelesaian</b><span>diketahui → rumus → hitung → simpulan</span></div>
+          </div>
+        </div>
+        <div class="info"><b>🔗 Alur belajar:</b> kenali segitiga → tentukan hipotenusa → tulis hubungan Pythagoras → masukkan data → hitung → periksa hasil → simpulkan.</div>
+      </article>
+
+      <article class="lesson hidden" id="chapter4">
+        <span class="tag">BAB 4 • MENEMUKAN KONSEP</span>
+        <h2>🔍 Menemukan Konsep Teorema Pythagoras</h2>
+        <p>Daripada langsung menghafal rumus, kita dapat menemukan hubungan Pythagoras melalui luas persegi yang dibangun pada setiap sisi segitiga siku-siku.</p>
+        <h3>1. Membuat tiga persegi</h3>
+        <p>Bayangkan segitiga siku-siku dengan sisi siku-siku <b>a</b> dan <b>b</b>, serta sisi miring <b>c</b>. Pada masing-masing sisi dibuat sebuah persegi.</p>
+        <div class="discovery">
+          <div><b>Persegi pada sisi a</b><strong>a²</strong><small>luas = a × a</small></div>
+          <div><b>Persegi pada sisi b</b><strong>b²</strong><small>luas = b × b</small></div>
+          <div><b>Persegi pada sisi c</b><strong>c²</strong><small>luas = c × c</small></div>
+        </div>
+        <h3>2. Membandingkan luas</h3>
+        <p>Hubungan khususnya adalah jumlah luas dua persegi yang berada pada sisi siku-siku sama dengan luas persegi pada sisi miring.</p>
+        <div class="formula">a² + b² = c²</div>
+        <h3>3. Contoh menemukan pola</h3>
+        <div class="example"><b>Segitiga 3–4–5:</b><br>3² + 4² = 9 + 16 = 25 = 5².<br>Jadi, panjang 3, 4, dan 5 memenuhi hubungan Pythagoras.</div>
+        <div class="warning">💡 <b>Ingat:</b> Teorema Pythagoras berlaku pada <b>segitiga siku-siku</b>. Jangan menggunakan a²+b²=c² pada sembarang segitiga.</div>
+      </article>
+
+      <article class="lesson hidden" id="chapter5">
+        <span class="tag">BAB 5 • SEGITIGA SIKU-SIKU</span>
+        <h2>📐 Mengenal Segitiga Siku-Siku</h2>
+        <div class="triangle-box">
+          <div class="triangle-visual">╱│<br>╱ │<br>╱__│</div>
+          <div><h3>Bagian-bagiannya</h3><p><b>a dan b</b> → sisi siku-siku yang membentuk sudut 90°.</p><p><b>c</b> → sisi miring atau hipotenusa.</p><p>Hipotenusa berhadapan dengan sudut 90° dan merupakan sisi terpanjang.</p></div>
+        </div>
+        <h3>🔎 Cara menemukan hipotenusa</h3>
+        <ol><li>Cari sudut yang besarnya 90°.</li><li>Lihat sisi yang berada tepat di depan sudut tersebut.</li><li>Sisi itu adalah hipotenusa.</li></ol>
+        <h3>📚 Ciri-ciri segitiga siku-siku</h3>
+        <ul><li>Memiliki tepat satu sudut siku-siku.</li><li>Dua sisi membentuk sudut 90°.</li><li>Sisi di depan sudut 90° adalah sisi terpanjang.</li><li>Ketiga sisi dapat memenuhi hubungan a²+b²=c².</li></ul>
+        <div class="info">⭐ <b>Tips:</b> sebelum menghitung, tulis apa yang diketahui, apa yang ditanyakan, lalu tentukan posisi hipotenusa.</div>
+      </article>
+
+      <article class="lesson hidden" id="chapter6">
+        <span class="tag">BAB 6 • RUMUS, LANGKAH & CONTOH</span>
+        <h2>🧠 Rumus Teorema Pythagoras</h2>
+        <div class="formula">a² + b² = c²</div>
+        <p><b>a</b> dan <b>b</b> adalah sisi siku-siku, sedangkan <b>c</b> adalah sisi miring/hipotenusa.</p>
+        <h3>Jika mencari sisi miring</h3><div class="formula">c = √(a² + b²)</div>
+        <div class="example"><b>Contoh 1:</b> a = 5 cm dan b = 12 cm.<br>c = √(5² + 12²) = √(25 + 144) = √169 = <b>13 cm</b>.</div>
+        <h3>Jika mencari sisi siku-siku</h3><div class="formula">a = √(c² − b²)</div>
+        <div class="example"><b>Contoh 2:</b> c = 13 cm dan b = 5 cm.<br>a = √(13² − 5²) = √(169 − 25) = √144 = <b>12 cm</b>.</div>
+        <h3>🪜 Langkah penyelesaian yang aman</h3>
+        <div class="step-grid">
+          <div><b>01</b><span>Tulis diketahui</span><small>Catat angka dan satuannya.</small></div>
+          <div><b>02</b><span>Tentukan yang dicari</span><small>Cari sisi a, b, atau c.</small></div>
+          <div><b>03</b><span>Pilih rumus</span><small>Sesuaikan dengan sisi yang dicari.</small></div>
+          <div><b>04</b><span>Hitung</span><small>Kerjakan kuadrat, operasi, lalu akar.</small></div>
+          <div><b>05</b><span>Cek</span><small>Pastikan hasil masuk akal.</small></div>
+          <div><b>06</b><span>Simpulkan</span><small>Tulis jawaban dengan satuan.</small></div>
+        </div>
+        <div class="warning">🧩 Kesalahan umum: salah menentukan hipotenusa, lupa mengkuadratkan, salah tanda saat mencari sisi siku-siku, atau lupa menuliskan satuan.</div>
+      </article>
+
+      <article class="lesson hidden" id="chapter7">
+        <span class="tag">BAB 7 • PENERAPAN</span>
+        <h2>🌍 Pythagoras dalam Kehidupan Sehari-hari</h2>
+        <div class="application-grid">
+          <div>🏠<b>Tangga Rumah</b><small>Menghubungkan jarak kaki tangga dan tinggi dinding untuk mendapatkan panjang tangga.</small></div>
+          <div>🌳<b>Taman</b><small>Menghitung diagonal taman berbentuk persegi panjang.</small></div>
+          <div>🗼<b>Tiang Bendera</b><small>Menghitung panjang tali penyangga jika tinggi dan jarak diketahui.</small></div>
+          <div>🌉<b>Jembatan</b><small>Menghubungkan perpindahan mendatar dan tegak.</small></div>
+          <div>📺<b>Layar</b><small>Menghitung diagonal layar dari panjang dan lebarnya.</small></div>
+          <div>🚁<b>Drone</b><small>Menghitung jarak lurus antara posisi drone dan titik tertentu.</small></div>
+        </div>
+        <h3>📌 Contoh masalah</h3>
+        <div class="example">Sebuah tangga panjangnya 13 m disandarkan pada dinding. Jarak kaki tangga ke dinding 5 m. Tinggi yang dicapai tangga adalah:<br><br><b>tinggi = √(13² − 5²) = √144 = 12 m.</b></div>
+        <h3>🧠 Cara mengubah masalah cerita menjadi matematika</h3>
+        <ol><li>Gambarkan situasinya secara sederhana.</li><li>Tentukan dua arah yang saling tegak lurus.</li><li>Jadikan kedua arah itu sebagai sisi siku-siku.</li><li>Tentukan apakah sisi yang dicari merupakan hipotenusa atau sisi siku-siku.</li><li>Gunakan rumus dan tuliskan kesimpulan sesuai konteks.</li></ol>
+      </article>
+
+      <article class="lesson hidden" id="chapter8">
+        <span class="tag">BAB 8 • BIDANG KARTESIUS</span>
+        <h2>🗺️ Pythagoras pada Bidang Kartesius</h2>
+        <p>Bidang Kartesius menggunakan dua sumbu, yaitu sumbu <b>x</b> mendatar dan sumbu <b>y</b> tegak. Setiap titik ditulis sebagai pasangan <b>(x,y)</b>.</p>
+        <div class="cartesian large-cartesian">
+          <div class="axis-y">y ↑</div>
+          <div class="grid-art">
+            <div class="grid-axis-x"></div><div class="grid-axis-y"></div>
+            <div class="grid-segment"></div>
+            <span class="point-a">A (1,1)</span><span class="point-b">B (5,4)</span>
+          </div>
+          <div class="axis-x">→ x</div>
+        </div>
+        <h3>📏 Rumus jarak dua titik</h3>
+        <div class="formula">d = √[(x₂ − x₁)² + (y₂ − y₁)²]</div>
+        <p>Rumus tersebut sebenarnya merupakan Teorema Pythagoras. Selisih koordinat <b>x</b> menjadi jarak mendatar, sedangkan selisih koordinat <b>y</b> menjadi jarak tegak.</p>
+        <div class="example"><b>Contoh:</b> A(1,1) dan B(5,4).<br><br>Δx = 5 − 1 = 4<br>Δy = 4 − 1 = 3<br>d = √(4² + 3²) = √25 = <b>5 satuan</b>.</div>
+        <h3>🧭 Langkah menentukan jarak pada Kartesius</h3>
+        <ol><li>Tulis koordinat titik pertama dan kedua.</li><li>Hitung selisih x.</li><li>Hitung selisih y.</li><li>Kuadratkan kedua selisih.</li><li>Jumlahkan, lalu ambil akar kuadrat.</li></ol>
+        <div class="info">💡 <b>Catatan:</b> tanda negatif tidak menjadi masalah karena selisih koordinat dikuadratkan. Yang penting pasangan koordinat ditulis dengan benar.</div>
+      </article>
+
+      <article class="lesson hidden" id="chapter9">
+        <span class="tag">BAB 9 • LATIHAN MANDIRI</span>
+        <h2>📝 Uji Pemahamanmu</h2>
+        <p>Kerjakan beberapa latihan berikut. Gunakan langkah diketahui → ditanya → rumus → perhitungan → jawaban.</p>
+        <div class="exercise-list">
+          <div><b>Latihan A</b><p>Segitiga siku-siku memiliki sisi 9 cm dan 12 cm. Tentukan sisi miringnya.</p></div>
+          <div><b>Latihan B</b><p>Sebuah segitiga memiliki hipotenusa 17 cm dan salah satu sisi siku-siku 8 cm. Tentukan sisi lainnya.</p></div>
+          <div><b>Latihan C</b><p>Sebuah taman berukuran 15 m × 20 m. Berapa panjang diagonal taman?</p></div>
+          <div><b>Latihan D</b><p>Tentukan jarak antara P(2,3) dan Q(8,11) pada bidang Kartesius.</p></div>
+        </div>
+        <div class="mini-practice"><b>🎯 Tantangan cepat:</b> Sebuah segitiga siku-siku memiliki sisi siku-siku 9 cm dan 12 cm. Berapa panjang sisi miringnya?<input id="miniAnswer" type="number" placeholder="Masukkan jawaban"><button class="btn primary" onclick="checkMiniPractice()">Periksa Jawaban</button><div id="miniFeedback"></div></div>
+      </article>
+
+      <article class="lesson hidden" id="chapter10">
+        <span class="tag">BAB 10 • RINGKASAN LENGKAP</span>
+        <h2>🏆 Ringkasan Materi Teorema Pythagoras</h2>
+        <div class="summary long-summary">
+          <p><b>1.</b> Teorema Pythagoras merupakan aturan yang menghubungkan panjang ketiga sisi pada <b>segitiga siku-siku</b>.</p>
+          <p><b>2.</b> Segitiga siku-siku memiliki satu sudut yang besarnya tepat <b>90°</b>. Dua sisi yang membentuk sudut tersebut disebut sisi siku-siku.</p>
+          <p><b>3.</b> Sisi yang berhadapan dengan sudut 90° disebut <b>hipotenusa atau sisi miring</b>. Hipotenusa selalu menjadi sisi terpanjang.</p>
+          <p><b>4.</b> Hubungan utama ketiga sisi dinyatakan dengan <b>a² + b² = c²</b>, dengan c sebagai hipotenusa.</p>
+          <p><b>5.</b> Jika hipotenusa dicari, gunakan <b>c = √(a²+b²)</b>. Jika salah satu sisi siku-siku dicari, gunakan bentuk <b>√(c² − sisi lainnya²)</b>.</p>
+          <p><b>6.</b> Konsep tersebut dapat dipahami melalui luas persegi pada ketiga sisi. Luas persegi pada dua sisi siku-siku jika dijumlahkan sama dengan luas persegi pada hipotenusa.</p>
+          <p><b>7.</b> Dalam menyelesaikan soal, jangan langsung memasukkan angka. Identifikasi dahulu informasi yang diketahui, apa yang ditanyakan, dan posisi hipotenusa.</p>
+          <p><b>8.</b> Perhatikan urutan perhitungan: kuadratkan bilangan, lakukan operasi tambah atau kurang sesuai rumus, kemudian ambil akar kuadrat.</p>
+          <p><b>9.</b> Pythagoras dapat diterapkan pada tangga, diagonal ruangan atau taman, kabel penyangga, jembatan, layar, pengukuran jarak, dan berbagai masalah yang membentuk segitiga siku-siku.</p>
+          <p><b>10.</b> Pada bidang Kartesius, jarak mendatar dapat diperoleh dari selisih koordinat x, sedangkan jarak tegak dari selisih koordinat y. Kedua nilai tersebut membentuk segitiga siku-siku.</p>
+          <p><b>11.</b> Rumus jarak dua titik adalah <b>d = √[(x₂−x₁)²+(y₂−y₁)²]</b>. Rumus ini merupakan penerapan langsung Teorema Pythagoras.</p>
+          <p><b>12.</b> Hasil akhir sebaiknya diperiksa kembali. Pastikan tidak salah menentukan sisi, tidak salah menghitung kuadrat atau akar, dan jangan lupa menuliskan satuan jika soal menggunakan satuan panjang.</p>
+          <p><b>13.</b> Dalam matematika, proses berpikir sama pentingnya dengan jawaban. Dengan membuat gambar sederhana dan mengikuti langkah yang teratur, soal yang terlihat sulit dapat menjadi lebih mudah.</p>
+        </div>
+        <div class="info"><b>🌟 Inti yang harus diingat:</b> <span class="highlight-text">Segitiga siku-siku → hipotenusa → a²+b²=c² → hitung → cek → simpulkan.</span></div>
+        <button class="btn primary" onclick="showPage('practice')">📝 Lanjut ke Latihan</button>
+      </article>
+
+      <article class="lesson hidden" id="chapter11">
+        <span class="tag">BAB 11 • PENUTUP</span>
+        <h2>🌟 Penutup Petualangan</h2>
+        <p>Selamat! Kamu telah menyelesaikan perjalanan belajar Teorema Pythagoras. Kamu sudah mengenal tujuan pembelajaran, menjawab pertanyaan pemantik, melihat peta konsep, menemukan hubungan luas persegi, mengenali segitiga siku-siku, menggunakan rumus, memecahkan masalah sehari-hari, serta menghubungkan Pythagoras dengan bidang Kartesius.</p>
+        <div class="closing-card"><div class="closing-icon">📐✨</div><h3>Jadilah Math Explorer!</h3><p>Jangan takut ketika menemukan soal yang baru. Mulailah dengan menggambar, tentukan apa yang diketahui, cari sisi yang ditanyakan, lalu pilih hubungan matematika yang tepat. Kesalahan adalah bagian dari proses belajar.</p></div>
+        <h3>🎓 Pesan untuk peserta didik</h3>
+        <p>Matematika bukan sekadar menghafal rumus. Matematika melatih kita untuk berpikir runtut, teliti, dan mampu menjelaskan alasan dari sebuah jawaban. Semakin sering kamu berlatih, semakin mudah kamu mengenali pola dalam sebuah masalah.</p>
+        <div class="info"><b>🚀 Misi selanjutnya:</b> lanjutkan ke latihan dan kuis 10 soal untuk menguji seberapa jauh kamu memahami Teorema Pythagoras.</div>
+        <button class="btn primary" onclick="startQuiz()">🎮 Mulai Kuis 10 Soal</button>
+        <button class="btn secondary" onclick="showPage('identity')">🎓 Lihat Biodata Pengajar</button>
+      </article>
+    </main>
+  </section>
+
+  <!-- ================= LATIHAN ================= -->
+  <section id="practice" class="page">
+    <header class="topbar">
+      <button class="top-btn" onclick="showPage('module')">← E-Modul</button>
+      <strong>📝 LATIHAN PEMAHAMAN</strong>
+      <button class="top-btn" onclick="startQuiz()">Kuis →</button>
+    </header>
+    <main class="content narrow">
+      <div class="hero">
+        <span class="tag">LATIHAN</span>
+        <h1>Siap menjadi Math Explorer?</h1>
+        <p>Kerjakan latihan singkat berikut sebelum masuk ke kuis 10 soal.</p>
+      </div>
+      <div class="question-card">
+        <span class="question-label">LATIHAN 1</span>
+        <h2>Sebuah segitiga siku-siku memiliki sisi siku-siku 6 cm dan 8 cm. Berapa sisi miringnya?</h2>
+        <div class="answer-grid">
+          <button onclick="practiceAnswer(this,9)">9 cm</button>
+          <button onclick="practiceAnswer(this,10)">10 cm</button>
+          <button onclick="practiceAnswer(this,12)">12 cm</button>
+          <button onclick="practiceAnswer(this,14)">14 cm</button>
+        </div>
+        <div id="practiceFeedback" class="feedback"></div>
+      </div>
+      <div class="info">Setelah latihan selesai, lanjutkan ke kuis utama: <b>5 pilihan ganda + 5 esai.</b></div>
+    </main>
+  </section>
+
+  <!-- ================= KUIS ================= -->
+  <section id="quiz" class="page">
+    <header class="topbar">
+      <button class="top-btn" onclick="showPage('module')">← E-Modul</button>
+      <strong>🎮 KUIS MATH QUEST</strong>
+      <button class="top-btn" onclick="showPage('home')">Beranda</button>
+    </header>
+    <main class="content narrow">
+      <div class="quiz-status">
+        <span id="quizCount">Soal 1 / 10</span>
+        <span id="quizXP">XP: 0</span>
+        <span id="quizLives">❤️❤️❤️❤️❤️</span>
+      </div>
+      <div class="progress"><div id="quizProgress"></div></div>
+      <div id="quizCard" class="question-card"></div>
+    </main>
+  </section>
+
+  <!-- ================= HASIL ================= -->
+  <section id="result" class="page">
+    <main class="result-screen">
+      <div class="result-card">
+        <div class="trophy">🏆</div>
+        <div class="tag">MISSION COMPLETE</div>
+        <h1 id="resultTitle">MATH EXPLORER!</h1>
+        <p id="resultMessage"></p>
+        <div class="result-stats">
+          <div><b id="finalScore">0</b><small>XP</small></div>
+          <div><b id="finalCorrect">0</b><small>Benar</small></div>
+          <div><b id="finalValue">0</b><small>Nilai</small></div>
+        </div>
+        <div class="badge">📐 PYTHAGORAS MASTER</div>
+        <button class="btn primary" onclick="showPage('identity')">🎓 Tentang Pengajar</button>
+        <button class="btn secondary" onclick="restartQuiz()">🔄 Ulangi Kuis</button>
+      </div>
+    </main>
+  </section>
+
+  <!-- ================= IDENTITAS ================= -->
+  <section id="identity" class="page">
+    <main class="identity-screen">
+      <div class="identity-card">
+        <div class="graduation">🎓</div>
+        <span class="tag">TENTANG PENGAJAR</span>
+        <h1>MATH QUEST</h1>
+        <h2>E-Modul Interaktif Teorema Pythagoras</h2>
+        <p>Disusun dan dikembangkan oleh:</p>
+        <div class="identity-data">
+          <p><b>Nama:</b> <span>ALDA DA SILVA HAKI</span></p>
+          <p><b>BPM:</b> <span>34240022</span></p>
+          <p><b>Program Studi:</b> Pendidikan Matematika</p>
+          <p><b>Fakultas:</b> Keguruan dan Ilmu Pendidikan</p>
+          <p><b>Universitas:</b> Universitas Timor</p>
+        </div>
+        <div class="quote">“Belajar matematika bukan hanya tentang menemukan jawaban, tetapi juga tentang memahami proses untuk menemukan jawaban.”</div>
+        <p>🌟 Selamat belajar dan jadilah Math Explorer!</p>
+        <div class="teacher-closing">
+          <h3>📚 Penutup</h3>
+          <p>E-Modul ini dirancang sebagai media pembelajaran interaktif untuk membantu peserta didik memahami Teorema Pythagoras secara bertahap, visual, dan menyenangkan. Semoga materi, contoh, latihan, dan kuis di dalamnya dapat menjadi teman belajar yang membantu.</p>
+          <p><b>“Pahami konsepnya, ikuti langkahnya, lalu berani mencoba.”</b></p>
+        </div>
+        <button class="btn primary" onclick="showPage('home')">🏠 Kembali ke Beranda</button>
+      </div>
+    </main>
+  </section>
+
+  <!-- ================= PROGRESS ================= -->
+  <section id="progress" class="page">
+    <header class="topbar">
+      <button class="top-btn" onclick="showPage('home')">← Beranda</button>
+      <strong>🏆 PROGRESS</strong>
+      <button class="top-btn" onclick="startQuiz()">Kuis →</button>
+    </header>
+    <main class="content narrow">
+      <div class="hero">
+        <span class="tag">PERJALANANMU</span>
+        <h1>Math Explorer Progress</h1>
+        <p>Hasil kuis terakhir tersimpan di browser perangkat ini.</p>
+      </div>
+      <div class="progress-panel">
+        <div class="progress-circle" id="progressCircle">0%</div>
+        <h2 id="progressText">Belum ada kuis yang dikerjakan.</h2>
+        <p id="progressXP">XP terakhir: 0</p>
+        <button class="btn primary" onclick="startQuiz()">🎮 Mulai Kuis</button>
+      </div>
+    </main>
+  </section>
+
+</div>
+  <!-- ================= MISSION INTRO ================= -->
+  <div id="missionOverlay" class="mission-overlay hidden">
+    <div class="mission-box">
+      <div class="mission-glow">⚡</div><span class="mission-kicker">MATH QUEST • MISSION START</span>
+      <h1>🗺️ MISI DIMULAI!</h1><h2>Rahasia Teorema Pythagoras</h2>
+      <p>Siapkan logika, pahami soal, lalu taklukkan 10 tantangan!</p>
+      <div class="mission-objectives"><span>📖 Pahami</span><span>🧮 Hitung</span><span>🎯 Jawab</span><span>🏆 Taklukkan</span></div>
+      <button class="btn primary big" onclick="closeMissionOverlay()">🚀 SAYA SIAP!</button>
+    </div>
+  </div>
+<script src="script.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js").catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
